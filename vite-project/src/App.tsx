@@ -4,16 +4,19 @@ import Login from "./pages/Login";
 import Favorites from "./pages/Favorites";
 import MovieDetail from "./pages/MovieDetail";
 import WatchList from "./pages/WatchList";
+import BaseLayout from "./pages/BaseLayout";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/login" element={<Login />} />
-        <Route path="/" element={<Home />} />
-        <Route path="/favorites" element={<Favorites />} />
-        <Route path="/movie/:id" element={<MovieDetail />} />
-        <Route path="/watch_list" element={<WatchList />} />
+        <Route element={<BaseLayout />}>
+          <Route index element={<Home />} />
+          <Route path="/favorites" element={<Favorites />} />
+          <Route path="/movie/:id" element={<MovieDetail />} />
+          <Route path="/watchlist" element={<WatchList />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );

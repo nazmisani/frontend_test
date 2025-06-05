@@ -1,4 +1,4 @@
-export default function Favorites() {
+export default function Favorite() {
   return (
     <>
       <div>Favorites</div>

@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
-import Favorites from "./pages/Favorites";
+import Favorite from "./pages/Favorite";
 import MovieDetail from "./pages/MovieDetail";
 import WatchList from "./pages/WatchList";
 import BaseLayout from "./pages/BaseLayout";
@@ -13,7 +13,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route element={<BaseLayout />}>
           <Route index element={<Home />} />
-          <Route path="/favorites" element={<Favorites />} />
+          <Route path="/favorite" element={<Favorite />} />
           <Route path="/movie/:id" element={<MovieDetail />} />
           <Route path="/watchlist" element={<WatchList />} />
         </Route>

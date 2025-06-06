@@ -1,6 +1,6 @@
 export default function Navbar() {
   return (
-    <nav className="bg-blue-400 text-white py-3">
+    <nav className="sticky top-0 z-50 bg-blue-400 text-white py-3">
       <div className="max-w-7xl mx-auto px-8 flex justify-between items-center">
         <div className="font-bold text-lg tracking-wider">CINEMA</div>
         <div className="flex gap-6">

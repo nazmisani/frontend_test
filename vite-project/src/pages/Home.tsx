@@ -19,6 +19,7 @@ export default function Home() {
     try {
       const response = await tmdb.get("movie/top_rated");
       setTopRated(response.data?.results);
+      console.log(response.data?.results);
     } catch (error) {
       console.log(error);
     }

@@ -1,9 +1,25 @@
+import tmdb from "../api/tmdb";
 import type { MovieProps } from "../types/index";
 import { useState } from "react";
 
 export default function MovieCard({ movie }: MovieProps) {
   const [isFavorite, setIsFavorite] = useState(false);
   const [isWatchlist, setIsWatchlist] = useState(false);
+
+  async function addWatchlist() {
+    try {
+      const response = await tmdb.post(`/account/22055744/watchlist`, {
+        media_type: "movie",
+        media_id: movie.id,
+        watchlist: !isWatchlist,
+      });
+
+      console.log("Success:", response.data);
+      setIsWatchlist(!isWatchlist);
+    } catch (error) {
+      console.error("Error adding to watchlist:", error);
+    }
+  }
 
   return (
     <div className="bg-gray-900 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 w-full relative group">
@@ -14,7 +30,6 @@ export default function MovieCard({ movie }: MovieProps) {
           className="w-full aspect-[2/3] object-cover"
         />
 
-        {/* Action icons that only appear on hover */}
         <div className="absolute bottom-2 right-2 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <button
             onClick={() => setIsFavorite(!isFavorite)}
@@ -53,7 +68,7 @@ export default function MovieCard({ movie }: MovieProps) {
           </button>
 
           <button
-            onClick={() => setIsWatchlist(!isWatchlist)}
+            onClick={addWatchlist}
             className="bg-black bg-opacity-50 rounded-full p-1.5 hover:bg-opacity-70 transition-all"
             aria-label="Add to watchlist"
           >

@@ -51,7 +51,7 @@ export default function Home() {
       {/* Top Rated Start */}
       <div className="max-w-7xl mx-auto px-8 py-10">
         <h1 className="text-3xl font-bold mb-8">Top Rated</h1>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-5">
           {topRated.map((movie, id) => (
             <div key={id}>
               <MovieCard movie={movie} />

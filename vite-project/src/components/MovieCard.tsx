@@ -2,7 +2,7 @@ import type { MovieProps } from "../types/index";
 
 export default function MovieCard({ movie }: MovieProps) {
   return (
-    <div className="rounded-lg overflow-hidden shadow-md w-[160px]">
+    <div className="bg-gray-900 rounded-lg overflow-hidden shadow-md w-[160px]">
       <img
         src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
         alt={movie.title}

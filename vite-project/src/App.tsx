@@ -14,7 +14,7 @@ function App() {
         <Route element={<BaseLayout />}>
           <Route index element={<Home />} />
           <Route path="/favorite" element={<Favorite />} />
-          <Route path="/movie/:id" element={<MovieDetail />} />
+          <Route path="/movie/:movie_id" element={<MovieDetail />} />
           <Route path="/watchlist" element={<WatchList />} />
         </Route>
       </Routes>

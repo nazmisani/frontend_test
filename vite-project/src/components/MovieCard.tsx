@@ -28,7 +28,7 @@ export default function MovieCard({ movie }: MovieProps) {
   }
 
   return (
-    <div className="bg-gray-900 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 w-full relative group">
+    <div className="bg-gray-900 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 w-full">
       {/* Bagian klik untuk navigate */}
       <div onClick={handleNavigate} className="cursor-pointer">
         <div className="relative">
@@ -49,8 +49,9 @@ export default function MovieCard({ movie }: MovieProps) {
         </div>
       </div>
 
-      {/* Button hover (tidak ikut navigate) */}
-      <div className="absolute bottom-2 right-2 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+      {/* Button (tidak absolute, ada di bawah card) */}
+      <div className="flex items-center justify-end gap-2 px-3 pb-3">
+        {/* Favorite */}
         <button
           onClick={(e) => {
             e.stopPropagation();
@@ -90,6 +91,7 @@ export default function MovieCard({ movie }: MovieProps) {
           )}
         </button>
 
+        {/* Watchlist */}
         <button
           onClick={(e) => {
             e.stopPropagation();

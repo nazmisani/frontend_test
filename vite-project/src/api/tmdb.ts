@@ -33,7 +33,6 @@ tmdb.interceptors.response.use(
           break;
         case 500:
         case 502:
-        case 503:
         case 504:
           console.error(
             `Server error (${error.response.status}):`,
